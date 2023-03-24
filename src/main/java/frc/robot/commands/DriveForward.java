@@ -11,8 +11,8 @@ public class DriveForward extends CommandBase {
   Drivetrain drivetrain = new Drivetrain();
   /** Creates a new DriveForward. */
   public DriveForward(Drivetrain s_Drivetrain) {
-    this.drivetrain = s_Drivetrain;
-    addRequirements(s_Drivetrain);
+    s_Drivetrain = drivetrain;
+    addRequirements(drivetrain);
     // Use addRequirements() here to declare subsystem dependencies.
   }
 

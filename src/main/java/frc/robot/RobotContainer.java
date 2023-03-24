@@ -33,7 +33,6 @@ public class RobotContainer {
   // The robot's subsystems and commands are defined here...
   private final ExampleSubsystem m_exampleSubsystem = new ExampleSubsystem();
   private final Drivetrain s_Drivetrain = new Drivetrain();
-  private final DriveForward c_DriveForward = new DriveForward(s_Drivetrain);
 
   final SendableChooser<Command> autoChooser = new SendableChooser<Command>();
   final SendableChooser<Command> autoDelay = new SendableChooser<Command>();
@@ -62,13 +61,13 @@ public class RobotContainer {
     autoDelay.addOption("10 seconds", new WaitCommand(10.0));
 
 
-    autoChooser.setDefaultOption("Do Nothing", new WaitCommand(1));
+    /*autoChooser.setDefaultOption("Do Nothing", new WaitCommand(1));
     autoChooser.addOption("Drive back for 2.5 seconds", new DriveForward(s_Drivetrain)
         .deadlineWith(new WaitCommand(2.5)));
     autoChooser.addOption("Drive back for 4 seconds", new DriveForward(s_Drivetrain)
         .deadlineWith(new WaitCommand(4.0)));
     autoChooser.addOption("Drive back for 6 seconds", new DriveForward(s_Drivetrain)
-        .deadlineWith(new WaitCommand(6.0)));
+        .deadlineWith(new WaitCommand(6.0)));*/
   }
 
   /**
@@ -101,6 +100,6 @@ public class RobotContainer {
    */
   public Command getAutonomousCommand() {
     // An example command will be run in autonomous
-    return c_DriveForward.beforeStarting(new WaitCommand(0));
+    return new WaitCommand(0);// c_DriveForward;
   }
 }
